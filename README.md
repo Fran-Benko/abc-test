@@ -1,3 +1,14 @@
-# abc-test
+# llm-rag-trade-app
 
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoy41UTxayn3epr8Fv4D2DZsa+CxdZ/VaEqTgVFxgavk1bg3lfJFS51s7LC0/61tRg36vltYpzGMwHSKKDAx1+0SEGnvqNljYwE1m+dJIgpi++Bwzvkhl3H5HjeJpMGIQzrowJaLKE9x/akEMAajqTo/tCt+9yed9VVV7pjem3RXW0k4DwcHXEdZy/yQDVo/Cs41zKGWyptC2Boo0Xb3H5gZG5f78HESbeagsJ6tlGOtqFSKPh54AXNiNIHpTW+8JFpfORSWV/LZRBed+lZb3TvvMF6O08fnYGfS3QO9YPvrD4bBTX1aZk8bAIcx6sj4eciQFuV63g3rSFnPQE7PZH
+
+Tasks:
+- Allow the user to define a ticker.
+- Connect with a financial news API to extract the latest news of a defined ticket based on a time window.
+- Connect with the Reddit API to get the last posts of a ticker based on a defined time window.
+- Connect with the CoinGecko API to get the historical data of the ticker.
+- Allow the user to load documents to prepare a context RAG to improve the technical analysis of a desired LLM.
+- The LLM + RAG will assist the user with doubts regarding trading, patterns, technical indicators, etc.
+- Transform and prepare all the data for a traditional ML model to predict the trend and future ticker price.
+- The ML model should signal you to buy or sell, and the recommended take profit and stop loss in a format for an API to execute the actions.
+- The app will allow you to select a trading strategy and backtest on the ticker.
+- The app will allow you to connect an exchange API to execute the strategy.
