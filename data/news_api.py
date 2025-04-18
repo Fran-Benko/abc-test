@@ -4,19 +4,20 @@ from config.settings import FINANCIAL_NEWS_API_KEY, FINANCIAL_NEWS_API_URL
 
 class NewsAPI:
     @staticmethod
-    def get_news(ticker: str, start_time: str, end_time: str) -> list:
-        """Fetch financial news articles for the ticker."""
-        params = {
-            "ticker": ticker,
-            "start_time": start_time,
-            "end_time": end_time,
-            "api_key": FINANCIAL_NEWS_API_KEY
-        }
+    def get_news(ticker: str) -> str:
+
+        lstParams = [
+            FINANCIAL_NEWS_API_URL,
+            FINANCIAL_NEWS_API_KEY,
+            ticker
+        ]
+        
+        newsAPIurl = "{}?apikey={}&qInTitle={}&language=en".format(lstParams)
 
         try:
-            response = requests.get(FINANCIAL_NEWS_API_URL, params=params)
+            response = requests.get(newsAPIurl)
             response.raise_for_status()
-            return response.json().get("articles", [])
+            return response.json().get("results", [])
         except requests.exceptions.RequestException as e:
             print(f"Error fetching news: {e}")
             return []

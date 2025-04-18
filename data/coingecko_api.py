@@ -1,28 +1,22 @@
 # data/coingecko_api.py
 import requests
-from config.settings import COINGECKO_API_URL
-from dotenv import load_dotenv
-import os
+from config.settings import COINGECKO_API_URL, COINGECKO_API_KEY
 
 
 
 
 class CoinGeckoAPI:
     @staticmethod
-    def get_coin_history(ticker: str, days: int = 30) -> dict:
+    def get_coin_history(ticker: str, days: int = 10) -> dict:
 
-        load_dotenv()
-
-        xRapidKey = os.environ['coingeko-key']
-        xRapidHost = os.environ['coingeko-host']
 
         headers = {
-            'x-rapidapi-key': xRapidKey,
-            'x-rapidapi-host': xRapidHost
+            'x-rapidapi-key': COINGECKO_API_KEY,
+            'x-rapidapi-host': COINGECKO_API_URL
         }
 
         """Fetch historical market data for the ticker."""
-        url = f"{COINGECKO_API_URL}/coins/{ticker}/market_chart"
+        url = f"https://{COINGECKO_API_URL}/coins/{ticker}/market_chart"
         params = {
             "vs_currency": "usd",
             "days": days
