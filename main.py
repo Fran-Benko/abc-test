@@ -20,18 +20,18 @@ def main():
         print("Invalid date format. Please use YYYY-MM-DD.")
         return
 
-    # Fetch data
+    # Fetch data (revisado)
     print("Fetching data...")
-    news = NewsAPI.get_news(ticker, start_time, end_time)
-    reddit_posts = RedditAPI.get_posts(ticker, start_time, end_time)
+    news = NewsAPI.get_news(ticker)
+    reddit_posts = RedditAPI.get_posts(ticker)
     coin_data = CoinGeckoAPI.get_coin_history(ticker)
 
-    # Load documents
+    # Load documents (PENDIENTE)
     documents_input = input("Enter file paths for documents (comma-separated, or press Enter to skip): ")
     doc_paths = [p.strip() for p in documents_input.split(",")] if documents_input else []
     docs_content = DocumentLoader.load_documents(doc_paths)
 
-    # Process data
+    # Process data (REVISANDO)
     print("Processing data...")
     features = FeatureEngineer.transform_data(news, reddit_posts, coin_data, docs_content)
     ml_prediction = MLPredictor.predict_trend(features)

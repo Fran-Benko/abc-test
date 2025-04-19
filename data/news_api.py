@@ -12,7 +12,11 @@ class NewsAPI:
             ticker
         ]
         
-        newsAPIurl = "{}?apikey={}&qInTitle={}&language=en".format(lstParams)
+        newsAPIurl = "{}?apikey={}&qInTitle={}&language=en".format(
+                                                            lstParams[0],
+                                                            lstParams[1],
+                                                            lstParams[2]
+                                                            )
 
         try:
             response = requests.get(newsAPIurl)

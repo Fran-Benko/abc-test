@@ -5,7 +5,7 @@ from config.settings import REDDIT_CLIENT_ID, REDDIT_CLIENT_KEY, REDDIT_USR_GRAN
 
 class RedditAPI:
     @staticmethod
-    def get_posts(ticker: str, start_time: str, end_time: str) -> list:
+    def get_posts(ticker: str) -> str:
         """Fetch Reddit posts mentioning the ticker."""
         # Authenticacion mediante request
         auth = requests.auth.HTTPBasicAuth(REDDIT_CLIENT_ID, REDDIT_CLIENT_KEY)
