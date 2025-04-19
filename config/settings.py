@@ -22,11 +22,6 @@ REDDIT_ACCESS_URL = os.environ['reddit_access_url']
 REDDIT_HOST = os.environ['reddit_host']
 
 
-
-
-
-
-
 COINGECKO_API_KEY = os.environ['coingeko_key']
 COINGECKO_API_URL = os.environ['coingeko_host']
 
