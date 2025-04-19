@@ -1,6 +1,6 @@
 from collections import defaultdict
 from statistics import mean, stdev
-from typing import Dict, List, Optional, Union
+from typing import Dict, List, Union
 import re
 from textblob import TextBlob
 
